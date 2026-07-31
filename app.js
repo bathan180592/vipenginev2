@@ -27,7 +27,7 @@
     ];
     const MIX={id:"mix",name:"Không chọn – Mix",K:9.73984,C:.5926225,Ld:.2593184,Lw:.0994286,group:"mix"};
     const PACKAGES={regular:{name:"Hoàn trả theo tổng cược",icon:"hoan-tra-tong-cuoc",desc:"Nhận hoàn trả dựa trên tổng cược hợp lệ, không phụ thuộc kết quả thắng thua.",cycle:"Hằng ngày"},daily:{name:"Bảo hiểm cược theo ngày",icon:"bao-hiem-cuoc-thua",desc:"Nhận hoàn trả theo kết quả thua ròng hợp lệ được tổng kết trong ngày.",cycle:"Hằng ngày"},weekly:{name:"Bảo hiểm cược theo tuần",icon:"chu-ky-tuan",desc:"Gộp kết quả thua ròng hợp lệ trong tuần trước khi tính hoàn trả.",cycle:"Hằng tuần"}};
-    const USERS={guest:{logged:false,vip:null,name:null,deposit:0,stake:0,active:"regular",pending:null},vip0:{logged:true,vip:0,name:"vip_starter",deposit:1.2e6,stake:5.8e6,active:"regular",pending:null},vip3:{logged:true,vip:3,name:"18813_barry",deposit:72.6e6,stake:418.4e6,active:"regular",pending:null}};
+    const USERS={guest:{logged:false,vip:null,name:null,deposit:0,stake:0,active:"regular",pending:null},vip0:{logged:true,vip:0,name:"vip_starter",deposit:1.2e6,stake:5.8e6,active:"regular",pending:null},vip3:{logged:true,vip:3,name:"118813_bathan",deposit:72.6e6,stake:418.4e6,active:"regular",pending:null}};
     let state="vip3",selectedTier=3,selectedPackage=null,selectedCategories=new Set(),authIntent="login";
     const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
     const money=n=>new Intl.NumberFormat("vi-VN",{maximumFractionDigits:0}).format(Math.max(0,n||0))+" VND";
