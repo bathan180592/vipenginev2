@@ -92,6 +92,9 @@
     $("#backToPackages").onclick=()=>{$("#confirmOverlay").classList.remove("show");openOverlay("cashbackOverlay")};
     $("#confirmPackage").onclick=()=>{user().pending=selectedPackage;$("#confirmOverlay").classList.remove("show");document.body.classList.remove("no-scroll");renderPackageSummary();toast("Đã ghi nhận lựa chọn",`${PACKAGES[selectedPackage].name} sẽ áp dụng từ ${nextMonth()}.`)};
     $("#toggleDev").onclick=()=>{$("#devtools").classList.toggle("collapsed");$("#toggleDev").textContent=$("#devtools").classList.contains("collapsed")?"+":"−"};
+    // Ẩn hẳn devtools để chụp màn hình sạch; nút DEV ở góc trên bên phải để bật lại.
+    const showDev=on=>{$("#devtools").classList.toggle("hidden",!on);$("#showDev").classList.toggle("hidden",on)};
+    $("#hideDev").onclick=()=>showDev(false);$("#showDev").onclick=()=>showDev(true);
     $$(".state-btn").forEach(b=>b.onclick=()=>{state=b.dataset.state;USERS.vip0.pending=null;USERS.vip3.pending=null;renderAll();toast("Đã đổi trạng thái",b.textContent)});
     $$("[data-close]").forEach(b=>b.onclick=()=>closeOverlay(b));$$(".overlay").forEach(o=>o.addEventListener("mousedown",e=>{if(e.target===o){o.classList.remove("show");document.body.classList.remove("no-scroll")}}));document.addEventListener("keydown",e=>{if(e.key==="Escape"){$(".overlay.show")?.classList.remove("show");document.body.classList.remove("no-scroll")}});
     $$("[data-auth-tab]").forEach(b=>b.onclick=()=>{const reg=b.dataset.authTab==="register";$$(".auth-tab").forEach(x=>x.classList.toggle("active",x===b));$("#authLogin").classList.toggle("hidden",reg);$("#authRegister").classList.toggle("hidden",!reg);$("#authSubmit").textContent=reg?"Đăng ký":"Đăng nhập"});
